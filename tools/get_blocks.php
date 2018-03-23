@@ -836,7 +836,7 @@ function gettxoutput($dbconn, $emercoin, $txid, $txdbid, $blockid, $time, $recei
 					}
 					$receiveaddress[$address]["time"]=$time;
 			}
-			$inputs.="($blockid, $txdbid, '$value', $n, '$asm', '$hex', $reqsigs, '$type', '$address'),";			
+			$inputs.="($blockid, $txdbid, '$value', $n, '$asm', '$hex', $reqsigs, '$type', '$address'),";
 			$values["valueout"]=$values["valueout"]+$value;
 			$values["countvout"]++;
 		}
@@ -854,7 +854,7 @@ function gettxoutput($dbconn, $emercoin, $txid, $txdbid, $blockid, $time, $recei
 
 // genesis block
 $hash="00000000bcccd459d036a588d1008fce8da3754b205736f32ddfd35350e84c2d";
-$query="SELECT hash FROM blocks ORDER BY id DESC LIMIT 32";
+$query="SELECT hash FROM blocks ORDER BY id DESC LIMIT 12";
 $result = $dbconn->query($query);
 $dbconn->error;
 while($row = $result->fetch_assoc())

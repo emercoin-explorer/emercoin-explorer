@@ -52,7 +52,7 @@ function makeClickableLinks($s) {
 	foreach ($text as $s) {
 		if (strpos($s,'http') !== false || strpos($s,'ftp') !== false) {
 			if (isImage($s)) {
-				$s=preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.-]*(\?\S+)?)?)?)@', '<a href="$1"><img style="height:auto; width:auto; max-width:75px; max-height:75px;" src="$1"></a>', $s);
+				$s='<a href="'.$s.'"><img style="height:auto; width:auto; max-width:75px; max-height:75px;" src="'.$s.'"></a>';
 			} else {
 				$s=preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.-]*(\?\S+)?)?)?)@', '<a href="$1">$1</a>', $s);
 			}

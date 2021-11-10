@@ -190,12 +190,13 @@ function PrintTok($tokens) {
 			   }
 			  echo "</p>";
 			} else {
-				$history=$emercoin->name_history($item['name']);
-				if ($brand_info['address']==$history[0]['address']) {
-					 echo "<b>Verification: <font color='green'>PASSED</font></b><br><small class='text-muted'>(address verified)</small>";
-				} else {
-					echo "<b>Verification: <font color='red'>FAILED</font></b><br><small class='text-muted'></small>";
-				}
+				#$history=$emercoin->name_history($item['name']);
+				#if ($brand_info['address']==$history[0]['address']) {
+				#	 echo "<b>Verification: <font color='green'>PASSED</font></b><br><small class='text-muted'>(address verified)</small>";
+				#} else {
+				#		echo "<b>Verification: <font color='red'>FAILED</font></b><br><small class='text-muted'></small>";
+				#}
+				echo "<b>Verification: <font color='red'>FAILED</font></b><br><small class='text-muted'>Signature is missing</small>";
 			}
 		} // foreach $filt_list
 	}

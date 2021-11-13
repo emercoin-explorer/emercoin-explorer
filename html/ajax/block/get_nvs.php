@@ -35,7 +35,7 @@ function makeClickableLinks($s) {
 	foreach ($text as $s) {
 		if (strpos($s,'http') !== false || strpos($s,'ftp') !== false) {
 			if (isImage($s)) {
-				$s=preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.-]*(\?\S+)?)?)?)@', '<a href="$1"><img style="height:auto; width:auto; max-width:75px; max-height:75px;" src="$1"></a>', $s);
+				$s='<a href="'.$s.'"><img style="height:auto; width:auto; max-width:75px; max-height:75px;" src="'.$s.'"></a>';
 			} else {
 				$s=preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.-]*(\?\S+)?)?)?)@', '<a href="$1">$1</a>', $s);
 			}
@@ -168,12 +168,7 @@ if (isset($block_id) && $block_id!="") {
 						 }
 						echo "</p>";
 					} else {
-						$history=$emercoin->name_history($item['name']);
-						if ($brand_info['address']==$history[0]['address']) {
-							 echo "<b>Verification: <font color='green'>PASSED</font></b><br><small class='text-muted'>(address verified)</small>";
-						} else {
-							echo "<b>Verification: <font red='green'>FAILED</font></b><br><small class='text-muted'></small>";
-						}
+						echo "<b>Verification: <font color='red'>FAILED</font></b><br><small class='text-muted'>Signature is missing</small>";
 					}
 				} // foreach $filt_list
 			}

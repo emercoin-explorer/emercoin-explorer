@@ -59,7 +59,7 @@ function Tokenize($item) {
 				array_push($for_sig, trim($val_line));
 				$tok=explode("=", $val_line);
 				if (strtolower($tok[0])=="signature") { $tok[1].="="; }
-				$tokens[$tok[0]] = utf8_decode(trim($tok[1]));
+				$tokens[$tok[0]] = trim($tok[1]);
 			}
 			$tokens['__FOR_SIG__'] =  join('|', $for_sig);
 			return $tokens;
